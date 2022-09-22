@@ -6,14 +6,17 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
-import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
-import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthHeaderInterceptorService } from './interceptors/auth-header-interceptor.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  HttpClient,
+  HttpClientModule,
+  HTTP_INTERCEPTORS,
+} from '@angular/common/http';
+
 import { HostelDetailComponent } from './hostel-detail/hostel-detail.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ProfileComponent } from './profile/profile.component';
 
 // import { SigninComponent } from './auth/signin/signin.component';
 // import { SignupComponent } from './auth/signup/signup.component';
@@ -27,7 +30,6 @@ import { ProfileComponent } from './profile/profile.component';
     ContactUsComponent,
     FooterComponent,
     NotFoundComponent,
-    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,15 +37,9 @@ import { ProfileComponent } from './profile/profile.component';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthHeaderInterceptorService,
-      multi: true
-    }
-  ],
-  bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
